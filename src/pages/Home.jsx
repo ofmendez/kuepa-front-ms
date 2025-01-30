@@ -6,14 +6,15 @@ import { bubleStyles, inputStyles } from '@src/styles/chatStyles';
 
 function Home () {
   const [messages, setMessages] = useState([
-    // new Message({ id: 1, message: 'Hellowww!', senderName: 'Fabian M.' }),
+    // new Message({ id: 'a8e4aa11-9469-4151-a9f5-23addf4b789f', message: 'Hellowww!', senderName: 'Fabian M.' }),
   ]);
   const chatContainerRef = useRef(null);
   const inputRef = useRef(null);
+  const myName = JSON.parse(window.localStorage.getItem('user')).name || 'Anónimo';
 
   const onKeyUp = (e) => {
     if (e.key === 'Enter') {
-      setMessages([...messages, new Message({ id: 0, message: e.target.value })]);
+      setMessages([...messages, new Message({ id: 2, message: myName, senderName: myName })]);
       e.target.value = '';
     }
   };

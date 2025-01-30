@@ -26,6 +26,8 @@ function Login () {
   const handleDoneFetch = (d) => {
     console.log(d);
     window.localStorage.setItem('token', d.token);
+    window.localStorage.setItem('role', d.user.role);
+    window.localStorage.setItem('user', JSON.stringify(d.user));
     window.localStorage.setItem('expire', Date.now() + 1 * 24 * 60 * 60 * 1000);
     console.log('today: ', Date.now());
     login();
@@ -41,6 +43,9 @@ function Login () {
           <div className=''>
             <h2 className='text-titlesItech text-3xl pt-16 font-extrabold text-center w-96 '>Ingreso</h2>
             <form className='grid mb-16 mt-10 place-items-center w-12/12 md:w-8/12 ' onSubmit={handleSubmit}>
+              <label className='m-3'>
+                <input className='shadow-md h-6 outline-none border-2 rounded-full w-80  placeholder:text-gray-500  text-gray-500 p-4' type='text' placeholder='Username' name='userName' />
+              </label>
               <label className='m-3'>
                 <input className='shadow-md h-6 outline-none border-2 rounded-full w-80  placeholder:text-gray-500  text-gray-500 p-4' type='password' placeholder='password' name='password' />
               </label>
