@@ -14,7 +14,7 @@ function Home () {
 
   const onKeyUp = (e) => {
     if (e.key === 'Enter') {
-      setMessages([...messages, new Message({ id: 2, message: myName, senderName: myName })]);
+      setMessages([...messages, new Message({ id: 0, message: e.target.value, senderName: myName })]);
       e.target.value = '';
     }
   };
