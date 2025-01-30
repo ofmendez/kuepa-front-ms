@@ -2,7 +2,7 @@
 
 ## Publicado en
 
-[]()
+[https://kuepa-front-ms.pages.dev/](https://kuepa-front-ms.pages.dev/)
 
 ## Desarrollo
 
@@ -17,6 +17,8 @@ bun i
 ```
 
 ### Para ejecutar entorno de desarrollo
+
+Configurar el archivo .env.development tal como el archivo de referencia example.env.development.
 
 ```sh
 bun run dev
