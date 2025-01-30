@@ -17,6 +17,9 @@ const useChatWebSocket = () => {
     };
 
     ws.current.onmessage = (event) => {
+      const msj = JSON.parse(event.data);
+      if (msj.type === 'ping')
+        return;
       const data = new Message(JSON.parse(event.data));
       if (data.id !== user._id)
         setMessages((prevMessages) => [...prevMessages, data]);
